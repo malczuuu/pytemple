@@ -18,7 +18,7 @@ with open(os.path.join(_here, "pytemple", "version.py")) as f:
 setup(
     name="pytemple",
     version=version["__version__"],
-    description="Template processing for Python",
+    description="Replacing value placeholders in template files",
     long_description=long_description,
     author="Damian Malczewski",
     author_email="damian.m.malczewski@gmail.com",
