@@ -18,6 +18,17 @@ Replacing value placeholders in template files.
   $ pipenv install git+https://github.com/malczuuu/pytemple@0.1.0#egg=pytemple
   ```
 
+## Usage
+
+```python
+import pytemple
+
+with open("template.txt") as file:
+    template = file.read()
+
+template = pytemple.loads(template)
+```
+
 ## Example
 
 Following template
