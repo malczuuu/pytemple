@@ -15,7 +15,7 @@ Replacing value placeholders in template files.
 * Using [Pipenv](https://github.com/pypa/pipenv):
 
    ```bash
-  $ pipenv install git+https://github.com/malczuuu/pytemple@0.1.0#egg=pytemple
+  $ pipenv install git+https://github.com/malczuuu/pytemple@1.0.0#egg=pytemple
   ```
 
 ## Usage
