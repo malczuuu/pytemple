@@ -1,6 +1,7 @@
 import os
 import re
 import tempfile
+from typing import Generator
 
 import pytest
 
@@ -8,7 +9,7 @@ import pytemple
 
 
 @pytest.fixture
-def temp_file():
+def temp_file() -> Generator[str, None, None]:
     tf = tempfile.NamedTemporaryFile(mode="w", delete=False)
     tf.write("value=${random.int(10, 20)}")
     tf.close()
@@ -19,7 +20,7 @@ def temp_file():
 
 
 @pytest.mark.repeat(10)
-def test_load_from_file_reads_and_processes(temp_file):
+def test_load_from_file_reads_and_processes(temp_file: str):
     result = pytemple.load(temp_file)
 
     m = re.search(r"value=(\d+)", result)
