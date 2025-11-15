@@ -21,7 +21,6 @@ setup(
     description="Replacing value placeholders in template files",
     long_description=long_description,
     author="Damian Malczewski",
-    author_email="damian.m.malczewski@gmail.com",
     url="https://github.com/malczuuu/pytemple",
     license="MIT",
     packages=["pytemple"],
