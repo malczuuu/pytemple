@@ -1,21 +1,33 @@
 # PyTemple
 
-Replacing value placeholders in template files. 
+**Note** that this is a library for development/testing tools, so the performance is not a primary concern.
 
-| Placeholder key              | Description                               |
-|------------------------------|-------------------------------------------|
-| `${random.uuid}`             | Replace with random UUID value.           |
-| `${random.int(min, max)}`    | Replace with random integer within range. |
-| `${random.double(min, max)}` | Replace with random double within range.  |
-| `${random.boolean}`          | Replace with random boolean.              |
-| `${random.string(size)}`     | Replace with random string with size.     |
+## Table of Contents
+
+- [Placeholders](#placeholders)
+- [Installing](#installing)
+- [Usage](#usage)
+- [Example](#example)
+
+## Placeholders
+
+This chapter describes all supported placeholders that can be used in template files.
+
+1. `${random.uuid}` - replace with a random UUID value.
+2. `${random.int(min, max)}` - replace with a random integer within the specified range.
+3. `${random.double(min, max)}` - replace with a random double (floating-point number) within the specified range.
+4. `${random.boolean}` - replace with a random boolean value (`true` or `false`).
+5. `${random.string(size)}` - replace with a random string of the given size.
 
 ## Installing
 
-* Using [Pipenv](https://github.com/pypa/pipenv):
-
+* Using [Poetry](https://python-poetry.org/):
    ```bash
-  $ pipenv install git+https://github.com/malczuuu/pytemple@1.0.0#egg=pytemple
+   $ poetry add git+https://github.com/malczuuu/pytemple.git#1.1.0
+   ```
+* Using [Pipenv](https://github.com/pypa/pipenv):
+   ```bash
+  $ pipenv install git+https://github.com/malczuuu/pytemple@1.1.0#egg=pytemple
   ```
 
 ## Usage
