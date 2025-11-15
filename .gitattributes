@@ -1,0 +1,69 @@
+# Normalize line endings
+* text=auto
+
+# Python sources
+*.py     text eol=lf
+*.pyw    text eol=lf
+
+# Python bytecode / caches
+*.py[cod] binary
+__pycache__/** binary
+
+# Exclude non-source artifacts from archives
+venv/**          export-ignore
+.env             export-ignore
+.env.*           export-ignore
+.envrc           export-ignore
+build/**         export-ignore
+dist/**          export-ignore
+*.egg-info/**    export-ignore
+pip-wheel-metadata/** export-ignore
+
+# Jupyter notebooks — use diff driver if configured
+*.ipynb diff=jupyter-notebook merge=union
+
+# Common binary assets
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.svg    binary
+*.zip    binary
+*.tar    binary
+*.gz     binary
+*.7z     binary
+*.exe    binary
+*.dll    binary
+*.so     binary
+*.dylib  binary
+*.pdf    binary
+
+# Scripts
+*.sh     text eol=lf
+*.bash   text eol=lf
+*.ps1    text eol=crlf
+*.bat    text eol=crlf
+
+# Documentation and configs
+*.md     text eol=lf
+*.json   text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.toml   text eol=lf
+*.ini    text eol=lf
+*.cfg    text eol=lf
+*.csv    text eol=lf
+
+# Translations
+*.po     text eol=lf
+*.mo     binary
+
+# Tests and fixtures
+tests/** text eol=lf
+fixtures/** text eol=lf
+
+# Linguist hints
+vendor/**        linguist-vendored
+third_party/**   linguist-vendored
+build_tools/**   linguist-generated
