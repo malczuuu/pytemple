@@ -1,6 +1,7 @@
-from setuptools import setup
 import os
 import sys
+
+from setuptools import setup
 
 _here = os.path.abspath(os.path.dirname(__file__))
 
@@ -28,7 +29,16 @@ setup(
     scripts=[],
     include_package_data=True,
     classifiers=[
-        "Development Status :: 1 - Planning",
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Education",
         "Intended Audience :: Science/Research",
-        "Programming Language :: Python :: 3.6"],
-    )
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+    ])
