@@ -1,15 +1,32 @@
 # PyTemple
 
-Replacing value placeholders in template files. 
+Replacing value placeholders in template files.
 
-| Placeholder key               | Description                                                                                                             |
-|-------------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| `${random.uuid}`              | Replace with random UUID value.                                                                                         |
-| `${random.int(min, max)}`     | Replace with random integer within range.                                                                               |
-| `${random.double(min, max)}`  | Replace with random double within range.                                                                                |
-| `${random.boolean}`           | Replace with random boolean.                                                                                            |
-| `${random.string(size)}`      | Replace with random string with size.                                                                                   |
-| `${random.choice(a, b, ...)}` | Replace with a random choice from provided arguments (arguments may be single-word unquoted or quoted with `'` or `"`). |
+## Table of Contents
+
+- [Placeholders](#placeholders)
+- [Installing](#installing)
+- [Usage](#usage)
+- [Example](#example)
+
+## Placeholders
+
+This chapter describes all supported placeholders that can be used in template files.
+
+1. `${random.uuid}` - replace with a random UUID value.
+2. `${random.int(min, max)}` - replace with a random integer within the specified range.
+3. `${random.double(min, max)}` - replace with a random double (floating-point number) within the specified range.
+4. `${random.boolean}` - replace with a random boolean value (`true` or `false`).
+5. `${random.string(size)}` - replace with a random string of the given size.
+6. `${random.choice(a, b, ...)}` - replace with a random choice from the provided arguments. Arguments may be
+   single-word unquoted, or quoted (`'` or `"`).
+7. `${random.date(start, end)}` - replace with a random date (format: `YYYY-MM-DD`) between `start` and `end`. Dates may
+   be quoted or unquoted and can be ISO dates or epoch seconds.
+8. `${random.datetime(start, end)}` - replace with a random datetime (format: `YYYY-MM-DDTHH:MM:SS`) between `start` and
+   `end`. datetimes may be quoted or unquoted and can be ISO datetimes or epoch seconds.
+9. `${random.timestamp}`- replace with the current Unix timestamp (seconds since epoch).
+10. `${random.date.past(days=N)}` - replace with a random date within the past `N` days (inclusive).
+11. `${random.date.future(days=N)}` - replace with a random date within the next `N` days (inclusive).
 
 ## Installing
 
