@@ -5,9 +5,9 @@ verify_ssl = true
 
 [dev-packages]
 pytest = "==9.0.1"
-# required for running tests on Python 3.10
 exceptiongroup = "==1.3.0"
 typing-extensions = "==4.15.0"
+pytest-repeat = "==0.9.4"
 
 [packages]
 
