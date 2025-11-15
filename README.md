@@ -2,13 +2,14 @@
 
 Replacing value placeholders in template files. 
 
-| Placeholder key              | Description                               |
-|------------------------------|-------------------------------------------|
-| `${random.uuid}`             | Replace with random UUID value.           |
-| `${random.int(min, max)}`    | Replace with random integer within range. |
-| `${random.double(min, max)}` | Replace with random double within range.  |
-| `${random.boolean}`          | Replace with random boolean.              |
-| `${random.string(size)}`     | Replace with random string with size.     |
+| Placeholder key               | Description                                                                                                             |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| `${random.uuid}`              | Replace with random UUID value.                                                                                         |
+| `${random.int(min, max)}`     | Replace with random integer within range.                                                                               |
+| `${random.double(min, max)}`  | Replace with random double within range.                                                                                |
+| `${random.boolean}`           | Replace with random boolean.                                                                                            |
+| `${random.string(size)}`      | Replace with random string with size.                                                                                   |
+| `${random.choice(a, b, ...)}` | Replace with a random choice from provided arguments (arguments may be single-word unquoted or quoted with `'` or `"`). |
 
 ## Installing
 

@@ -2,6 +2,7 @@ import random
 import re
 import string
 import uuid
+from typing import List, Optional
 
 __UUID_PATTERN = r"\${\s*random\.uuid\s*}"
 __INT_PATTERN = r"\${\s*random\.int\s*\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s*}"
@@ -9,6 +10,7 @@ __BOOLEAN_PATTERN = r"\${\s*random\.boolean\s*}"
 __DOUBLE_PATTERN = \
     r"\${\s*random\.double\s*\(\s*(-?[0-9]\d*(?:\.\d+)?)\s*,\s*(-?[0-9]\d*(?:\.\d+)?)\s*\)\s*}"
 __STRING_PATTERN = r"\${\s*random\.string\s*\(\s*(\d+)\s*\)\s*}"
+__CHOICE_PATTERN = r"\${\s*random\.choice\s*\(\s*(.+?)\s*\)\s*}"
 
 
 def load(filename: str) -> str:
@@ -25,6 +27,7 @@ def __process(template: str) -> str:
     template = __process_boolean(template)
     template = __process_double(template)
     template = __process_string(template)
+    template = __process_choice(template)
     template = __process_uuid(template)
     return template
 
@@ -66,6 +69,19 @@ def __process_string(template: str) -> str:
     return template
 
 
+def __process_choice(template: str) -> str:
+    matches = re.findall(__CHOICE_PATTERN, template)
+    while matches:
+        args_str = matches[0]
+        args = __split_choice_args(args_str)
+        if not args:
+            break
+        value = random.choice(args)
+        template = re.sub(__CHOICE_PATTERN, value, template, count=1)
+        matches = re.findall(__CHOICE_PATTERN, template)
+    return template
+
+
 def __process_uuid(template: str) -> str:
     matches = re.findall(__UUID_PATTERN, template)
     while matches:
@@ -76,3 +92,54 @@ def __process_uuid(template: str) -> str:
 
 def __random_string(length: int = 20) -> str:
     return ''.join(random.choice(string.ascii_lowercase) for _ in range(length))
+
+
+def __split_choice_args(s: str) -> Optional[List[str]]:
+    """
+    Helper to split choice arguments while respecting single and double quotes
+    """
+    args = []
+    cur = ""
+    in_single = False
+    in_double = False
+    i = 0
+    while i < len(s):
+        c = s[i]
+        if c == "'" and not in_double:
+            in_single = not in_single
+            cur += c
+        elif c == '"' and not in_single:
+            in_double = not in_double
+            cur += c
+        elif c == "," and not in_single and not in_double:
+            token = cur.strip()
+            if token == "":
+                return None
+            # strip surrounding quotes
+            if (token[0] == "'" and token[-1] == "'") or (token[0] == '"' and token[-1] == '"'):
+                token = token[1:-1]
+            else:
+                # unquoted tokens must be single-word (no whitespace)
+                if any(ch.isspace() for ch in token):
+                    return None
+            args.append(token)
+            cur = ""
+        else:
+            cur += c
+        i += 1
+
+    if in_single or in_double:
+        return None
+
+    token = cur.strip()
+    if token == "":
+        return None
+
+    if (token[0] == "'" and token[-1] == "'") or (token[0] == '"' and token[-1] == '"'):
+        token = token[1:-1]
+    else:
+        if any(ch.isspace() for ch in token):
+            return None
+
+    args.append(token)
+    return args
