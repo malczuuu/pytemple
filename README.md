@@ -1,6 +1,6 @@
 # PyTemple
 
-Replacing value placeholders in template files.
+**Note** that this is a library for development/testing tools, so the performance is not a primary concern.
 
 ## Table of Contents
 
@@ -30,10 +30,13 @@ This chapter describes all supported placeholders that can be used in template f
 
 ## Installing
 
-* Using [Pipenv](https://github.com/pypa/pipenv):
-
+* Using [Poetry](https://python-poetry.org/):
    ```bash
-  $ pipenv install git+https://github.com/malczuuu/pytemple@1.0.0#egg=pytemple
+   $ poetry add git+https://github.com/malczuuu/pytemple.git#1.1.0
+   ```
+* Using [Pipenv](https://github.com/pypa/pipenv):
+   ```bash
+  $ pipenv install git+https://github.com/malczuuu/pytemple@1.1.0#egg=pytemple
   ```
 
 ## Usage
