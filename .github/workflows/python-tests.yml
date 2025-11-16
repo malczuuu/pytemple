@@ -1,12 +1,17 @@
 name: Python CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - "main"
+      - "release-*"
   pull_request:
     branches:
       - "main"
+      - "release-*"
+  schedule:
+    - cron: "0 3 * * 0"  # Weekly on Sundays at 3 AM UTC
 
 jobs:
   test:
