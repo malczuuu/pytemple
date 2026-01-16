@@ -23,7 +23,7 @@ This chapter describes all supported placeholders that can be used in template f
 7. `${random.date(start, end)}` - replace with a random date (format: `YYYY-MM-DD`) between `start` and `end`. Dates may
    be quoted or unquoted and can be ISO dates or epoch seconds.
 8. `${random.datetime(start, end)}` - replace with a random datetime (format: `YYYY-MM-DDTHH:MM:SS`) between `start` and
-   `end`. datetimes may be quoted or unquoted and can be ISO datetimes or epoch seconds.
+   `end`. Datetimes may be quoted or unquoted and can be ISO datetimes or epoch seconds.
 9. `${random.timestamp}`- replace with the current Unix timestamp (seconds since epoch).
 10. `${random.date.past(days=N)}` - replace with a random date within the past `N` days (inclusive).
 11. `${random.date.future(days=N)}` - replace with a random date within the next `N` days (inclusive).
