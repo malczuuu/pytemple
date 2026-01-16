@@ -1,5 +1,9 @@
 # PyTemple
 
+[![License](https://img.shields.io/github/license/malczuuu/pytemple)](https://github.com/malczuuu/pytemple/blob/main/LICENSE)
+
+A simple library for replacing value placeholders in template texts/files.
+
 **Note** that this is a library for development/testing tools, so the performance is not a primary concern.
 
 ## Table of Contents
@@ -8,6 +12,7 @@
 - [Installing](#installing)
 - [Usage](#usage)
 - [Example](#example)
+- [Project Status](#project-status)
 
 ## Placeholders
 
@@ -57,7 +62,7 @@ Following template
 
 would be translated as
 
-```txt
+```json
 {
   "uuid": "00772bf8-8f21-4f73-8ca0-30a5354cf935",
   "double": -3.006947539966321,
@@ -66,3 +71,10 @@ would be translated as
   "string": "cdtllavjhl"
 }
 ```
+
+## Project Status
+
+[![Status: Feature Complete](https://img.shields.io/badge/feature%20complete-darkblue?label=status)](#project-status)
+
+**PyTemple** is considered *feature complete*. Only **bug fixes** will be added. New features may be included only if
+there is a strong justification for them.
