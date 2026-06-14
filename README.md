@@ -4,7 +4,9 @@
 
 A simple library for replacing value placeholders in template texts/files.
 
-**Note** that this is a library for development/testing tools, so the performance is not a primary concern.
+> [!IMPORTANT]
+> this is a library for development/testing tools (e.g. creating scripts that generate random messages to
+> Kafka/AMQP/MQTT), so the performance is not a primary concern.
 
 ## Table of Contents
 
