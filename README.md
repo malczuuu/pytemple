@@ -1,11 +1,12 @@
 # PyTemple
 
+[![CI](https://github.com/malczuuu/pytemple/actions/workflows/ci.yml/badge.svg)](https://github.com/malczuuu/pytemple/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/malczuuu/pytemple)](https://github.com/malczuuu/pytemple/blob/main/LICENSE)
 
 A simple library for replacing value placeholders in template texts/files.
 
 > [!IMPORTANT]
-> this is a library for development/testing tools (e.g. creating scripts that generate random messages to
+> This is a library for development/testing tools (e.g. creating scripts that generate random messages to
 > Kafka/AMQP/MQTT), so the performance is not a primary concern.
 
 ## Table of Contents
